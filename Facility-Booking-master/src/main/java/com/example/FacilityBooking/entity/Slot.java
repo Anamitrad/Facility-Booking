@@ -16,6 +16,7 @@ public class Slot {
 	
 	Long venueId;
 	Long facId;
+	Long userId;
 	Time start;
 	Time end;
 	public Long getId() {
@@ -47,6 +48,12 @@ public class Slot {
 	}
 	public void setEnd(Time end) {
 		this.end = end;
+	}
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	
 

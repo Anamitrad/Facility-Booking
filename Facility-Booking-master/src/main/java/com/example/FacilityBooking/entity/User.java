@@ -1,9 +1,12 @@
 package com.example.FacilityBooking.entity;
-
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity(name="User_DB")
 public class User {
@@ -17,7 +20,9 @@ public class User {
     private String username;
     private String email;
     private Long mobile;
-    
+    @OneToMany(targetEntity=Slot.class, cascade= CascadeType.ALL)	
+	@JoinColumn(name="userId",referencedColumnName="id")
+    private List<Slot> bookedSlots;
     public User()
     {
     	
